@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Games | Holmes Games</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <svg class="logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="3" fill="none"/>
+                <line x1="30" y1="30" x2="44" y2="44" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="20" cy="20" r="6" stroke="currentColor" stroke-width="2" fill="none" opacity="0.5"/>
+            </svg>
+            <span class="logo-text">Holmes Games</span>
+        </a>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="games.html" class="active">Games</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <h1>Our Games</h1>
+        <p>Explore our collection of puzzle masterpieces</p>
+    </header>
+
+    <!-- Games Grid -->
+    <main class="games-page-grid">
+        <article class="game-card-large">
+            <div class="game-image" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);">
+                <div class="game-badge">New Release</div>
+                <div class="game-icon">🔍</div>
+            </div>
+            <div class="game-content">
+                <span class="game-genre">Logic Puzzle</span>
+                <h3>The Cipher Chronicles</h3>
+                <p>
+                    Embark on a journey through time as you decode ancient manuscripts and uncover 
+                    secrets hidden for centuries. With over 200 hand-crafted puzzles ranging from 
+                    cryptography challenges to pattern recognition, The Cipher Chronicles offers 
+                    an unparalleled puzzle experience.
+                </p>
+                <p>
+                    Follow the trail of a mysterious society that has guarded forbidden knowledge 
+                    since medieval times. Each solved cipher brings you closer to the ultimate truth.
+                </p>
+                <div class="game-features">
+                    <span class="game-feature">200+ Puzzles</span>
+                    <span class="game-feature">Historical Settings</span>
+                    <span class="game-feature">Cryptography</span>
+                    <span class="game-feature">PC / Mobile</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="game-card-large">
+            <div class="game-image" style="background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);">
+                <div class="game-badge">Award Winner</div>
+                <div class="game-icon">🗝️</div>
+            </div>
+            <div class="game-content">
+                <span class="game-genre">Escape Room</span>
+                <h3>Lockwood Manor</h3>
+                <p>
+                    You've received an invitation to the infamous Lockwood Manor, a Victorian 
+                    mansion with a dark history. Upon arrival, you find yourself trapped with 
+                    only your wits to guide you to freedom. Can you solve the mystery before midnight?
+                </p>
+                <p>
+                    Winner of the 2022 Independent Games Festival award for Best Puzzle Game, 
+                    Lockwood Manor delivers an atmospheric escape room experience like no other.
+                </p>
+                <div class="game-features">
+                    <span class="game-feature">10 Unique Rooms</span>
+                    <span class="game-feature">Multiple Endings</span>
+                    <span class="game-feature">VR Support</span>
+                    <span class="game-feature">PC / Console</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="game-card-large">
+            <div class="game-image" style="background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);">
+                <div class="game-icon">🧩</div>
+            </div>
+            <div class="game-content">
+                <span class="game-genre">Brain Teaser</span>
+                <h3>Mind Palace</h3>
+                <p>
+                    Inspired by the memory technique used by the world's greatest detectives, 
+                    Mind Palace challenges you to build and explore your own mental sanctuary 
+                    while solving increasingly complex spatial puzzles.
+                </p>
+                <p>
+                    Each room you construct holds new challenges. Arrange memories, connect 
+                    ideas, and expand your palace in this meditative yet challenging puzzle game.
+                </p>
+                <div class="game-features">
+                    <span class="game-feature">Procedural Levels</span>
+                    <span class="game-feature">Daily Challenges</span>
+                    <span class="game-feature">Relaxing Music</span>
+                    <span class="game-feature">All Platforms</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="game-card-large">
+            <div class="game-image" style="background: linear-gradient(135deg, #16213e 0%, #1a1a2e 100%);">
+                <div class="game-icon">📜</div>
+            </div>
+            <div class="game-content">
+                <span class="game-genre">Mystery Adventure</span>
+                <h3>The Last Detective</h3>
+                <p>
+                    Step into the shoes of Detective Sarah Blackwood in this noir-inspired 
+                    puzzle narrative. In a city where crime has become an art form, you are 
+                    the last hope for justice.
+                </p>
+                <p>
+                    Interrogate suspects, examine crime scenes, and piece together evidence 
+                    in this story-rich adventure that changes based on your deductions.
+                </p>
+                <div class="game-features">
+                    <span class="game-feature">Branching Story</span>
+                    <span class="game-feature">Voice Acting</span>
+                    <span class="game-feature">40+ Cases</span>
+                    <span class="game-feature">PC / Console</span>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <svg class="logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="3" fill="none"/>
+                        <line x1="30" y1="30" x2="44" y2="44" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                        <circle cx="20" cy="20" r="6" stroke="currentColor" stroke-width="2" fill="none" opacity="0.5"/>
+                    </svg>
+                    <span class="logo-text">Holmes Games</span>
+                </a>
+                <p class="footer-tagline">Crafting mysteries that challenge and delight.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Holmes Games. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

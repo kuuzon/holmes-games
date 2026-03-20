@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Holmes Games</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Security Warning Banner (For Training Purposes) -->
+    <div class="security-warning">
+        <strong>TRAINING EXAMPLE: This form contains intentional security vulnerabilities!</strong>
+        Do NOT use these patterns in real applications. See HTML comments for details.
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <svg class="logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="3" fill="none"/>
+                <line x1="30" y1="30" x2="44" y2="44" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="20" cy="20" r="6" stroke="currentColor" stroke-width="2" fill="none" opacity="0.5"/>
+            </svg>
+            <span class="logo-text">Holmes Games</span>
+        </a>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <h1>Contact Us</h1>
+        <p>Have a question or feedback? We'd love to hear from you.</p>
+    </header>
+
+    <!-- Contact Form Section -->
+    <main class="contact-section">
+        <!--
+        ╔══════════════════════════════════════════════════════════════════════════════╗
+        ║                    CYBERSECURITY VULNERABILITIES EXPLAINED                    ║
+        ║                         (FOR TRAINING PURPOSES ONLY)                         ║
+        ╠══════════════════════════════════════════════════════════════════════════════╣
+        ║                                                                              ║
+        ║  This form intentionally demonstrates BAD security practices:                ║
+        ║                                                                              ║
+        ║  1. PASSWORD FIELD FOR NO REASON                                             ║
+        ║     - Contact forms should NEVER ask for passwords                           ║
+        ║     - This is a phishing red flag                                            ║
+        ║                                                                              ║
+        ║  2. AUTOCOMPLETE="ON" FOR SENSITIVE FIELDS                                   ║
+        ║     - Should be autocomplete="off" for sensitive data                        ║
+        ║     - Allows browsers to cache sensitive information                         ║
+        ║                                                                              ║
+        ║  3. NO CSRF TOKEN                                                            ║
+        ║     - Forms should include CSRF tokens to prevent cross-site attacks         ║
+        ║     - Missing anti-forgery validation                                        ║
+        ║                                                                              ║
+        ║  4. HTTP ACTION (NOT HTTPS)                                                  ║
+        ║     - Form action uses http:// instead of https://                           ║
+        ║     - Data transmitted without encryption                                    ║
+        ║                                                                              ║
+        ║  5. PASSWORD DISPLAYED IN ALERT                                              ║
+        ║     - JavaScript shows password in plain text alert                          ║
+        ║     - Sensitive data should never be displayed or logged                     ║
+        ║                                                                              ║
+        ║  6. NO INPUT SANITIZATION                                                    ║
+        ║     - User input directly displayed without sanitization                     ║
+        ║     - Vulnerable to XSS attacks                                              ║
+        ║                                                                              ║
+        ║  7. NO RATE LIMITING                                                         ║
+        ║     - Form can be submitted unlimited times                                  ║
+        ║     - Vulnerable to spam and brute force attacks                             ║
+        ║                                                                              ║
+        ║  8. STORING SENSITIVE DATA IN URL PARAMS                                     ║
+        ║     - GET method exposes data in URL/browser history                         ║
+        ║     - Should use POST for sensitive information                              ║
+        ║                                                                              ║
+        ║  9. NO HONEYPOT FIELD                                                        ║
+        ║     - Missing bot detection mechanisms                                       ║
+        ║     - Easy target for automated form spam                                    ║
+        ║                                                                              ║
+        ║  10. CLIENT-SIDE ONLY VALIDATION                                             ║
+        ║      - No server-side validation                                             ║
+        ║      - Can be bypassed by disabling JavaScript                               ║
+        ║                                                                              ║
+        ╚══════════════════════════════════════════════════════════════════════════════╝
+        -->
+        
+        <!-- VULNERABILITY #8: Using GET method exposes data in URL -->
+        <form class="contact-form" method="GET" action="http://example.com/submit" autocomplete="on">
+            
+            <!-- VULNERABILITY #3: No CSRF token present -->
+            
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <!-- VULNERABILITY #2: autocomplete enabled for all fields -->
+                <input 
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    placeholder="Enter your full name"
+                    autocomplete="on"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    placeholder="Enter your email"
+                    autocomplete="on"
+                    required
+                >
+            </div>
+
+            <!-- VULNERABILITY #1: Unnecessary password field on contact form (phishing red flag) -->
+            <div class="form-group">
+                <label for="password">Account Password (for verification)</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    placeholder="Enter your password"
+                    autocomplete="on"
+                >
+                <!-- VULNERABILITY #5: Password will be displayed in JavaScript alert -->
+                <small style="color: var(--color-text-muted); font-size: 0.8rem;">
+                    Enter your Holmes Games account password for faster response.
+                </small>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject">
+                    <option value="">Select a topic...</option>
+                    <option value="support">Technical Support</option>
+                    <option value="billing">Billing Question</option>
+                    <option value="feedback">Game Feedback</option>
+                    <option value="press">Press Inquiry</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message *</label>
+                <!-- VULNERABILITY #6: No input sanitization - content rendered directly -->
+                <textarea 
+                    id="message" 
+                    name="message" 
+                    placeholder="Tell us how we can help..."
+                    required
+                ></textarea>
+            </div>
+
+            <!-- VULNERABILITY #9: No honeypot field for bot detection -->
+            
+            <!-- VULNERABILITY #7 & #10: No rate limiting, client-side validation only -->
+            <button type="submit" class="form-submit">Send Message</button>
+            
+            <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--color-text-muted); text-align: center;">
+                By submitting this form, you agree to our 
+                <a href="privacy.html" style="color: var(--color-primary);">Privacy Policy</a>.
+            </p>
+        </form>
+
+        <div style="margin-top: 3rem; text-align: center;">
+            <h3 style="margin-bottom: 1rem; font-family: var(--font-serif);">Other Ways to Reach Us</h3>
+            <p style="color: var(--color-text-muted); margin-bottom: 0.5rem;">
+                Email: contact@holmesgames.example
+            </p>
+            <p style="color: var(--color-text-muted); margin-bottom: 0.5rem;">
+                Press: press@holmesgames.example
+            </p>
+            <p style="color: var(--color-text-muted);">
+                Support Hours: Monday - Friday, 9 AM - 6 PM GMT
+            </p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <svg class="logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="3" fill="none"/>
+                        <line x1="30" y1="30" x2="44" y2="44" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                        <circle cx="20" cy="20" r="6" stroke="currentColor" stroke-width="2" fill="none" opacity="0.5"/>
+                    </svg>
+                    <span class="logo-text">Holmes Games</span>
+                </a>
+                <p class="footer-tagline">Crafting mysteries that challenge and delight.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Holmes Games. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
