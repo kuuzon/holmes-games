@@ -624,18 +624,25 @@ a {
     background: var(--color-primary-hover);
 }
 
-/* Security warning banner (for training display) */
-.security-warning {
-    background: #ff4444;
-    color: white;
-    padding: 1rem;
+/* Subtle footer training notice */
+.footer-training-notice {
+    margin: 1rem 0;
     text-align: center;
-    font-size: 0.9rem;
+    padding: 1rem 5%;
+    background: var(--color-bg-card);
+    font-size: 0.8rem;
+    color: #6b7280;
+    border-radius: 5px;
+    font-style: italic;
 }
 
-.security-warning strong {
-    display: block;
-    margin-bottom: 0.25rem;
+.footer-training-notice a {
+    color: #9ca3af;
+    text-decoration: underline;
+}
+
+.footer-training-notice a:hover {
+    color: var(--color-text-muted);
 }
 
 /* Legal Pages */
