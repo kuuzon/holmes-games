@@ -36,65 +36,13 @@
 
     <!-- Contact Form Section -->
     <main class="contact-section">
-        <!--
-        ╔══════════════════════════════════════════════════════════════════════════════╗
-        ║                    CYBERSECURITY VULNERABILITIES EXPLAINED                    ║
-        ║                         (FOR TRAINING PURPOSES ONLY)                         ║
-        ╠══════════════════════════════════════════════════════════════════════════════╣
-        ║                                                                              ║
-        ║  This form intentionally demonstrates BAD security practices:                ║
-        ║                                                                              ║
-        ║  1. PASSWORD FIELD FOR NO REASON                                             ║
-        ║     - Contact forms should NEVER ask for passwords                           ║
-        ║     - This is a phishing red flag                                            ║
-        ║                                                                              ║
-        ║  2. AUTOCOMPLETE="ON" FOR SENSITIVE FIELDS                                   ║
-        ║     - Should be autocomplete="off" for sensitive data                        ║
-        ║     - Allows browsers to cache sensitive information                         ║
-        ║                                                                              ║
-        ║  3. NO CSRF TOKEN                                                            ║
-        ║     - Forms should include CSRF tokens to prevent cross-site attacks         ║
-        ║     - Missing anti-forgery validation                                        ║
-        ║                                                                              ║
-        ║  4. HTTP ACTION (NOT HTTPS)                                                  ║
-        ║     - Form action uses http:// instead of https://                           ║
-        ║     - Data transmitted without encryption                                    ║
-        ║                                                                              ║
-        ║  5. PASSWORD DISPLAYED IN ALERT                                              ║
-        ║     - JavaScript shows password in plain text alert                          ║
-        ║     - Sensitive data should never be displayed or logged                     ║
-        ║                                                                              ║
-        ║  6. NO INPUT SANITIZATION                                                    ║
-        ║     - User input directly displayed without sanitization                     ║
-        ║     - Vulnerable to XSS attacks                                              ║
-        ║                                                                              ║
-        ║  7. NO RATE LIMITING                                                         ║
-        ║     - Form can be submitted unlimited times                                  ║
-        ║     - Vulnerable to spam and brute force attacks                             ║
-        ║                                                                              ║
-        ║  8. STORING SENSITIVE DATA IN URL PARAMS                                     ║
-        ║     - GET method exposes data in URL/browser history                         ║
-        ║     - Should use POST for sensitive information                              ║
-        ║                                                                              ║
-        ║  9. NO HONEYPOT FIELD                                                        ║
-        ║     - Missing bot detection mechanisms                                       ║
-        ║     - Easy target for automated form spam                                    ║
-        ║                                                                              ║
-        ║  10. CLIENT-SIDE ONLY VALIDATION                                             ║
-        ║      - No server-side validation                                             ║
-        ║      - Can be bypassed by disabling JavaScript                               ║
-        ║                                                                              ║
-        ╚══════════════════════════════════════════════════════════════════════════════╝
-        -->
         
-        <!-- VULNERABILITY #8: Using GET method exposes data in URL -->
+        <!-- VULNERABILITY: Hint - look at the "method" attribute -->
         <form class="contact-form" method="GET" action="http://example.com/submit" autocomplete="on">
-            
-            <!-- VULNERABILITY #3: No CSRF token present -->
-            
+        
             <div class="form-group">
                 <label for="name">Full Name *</label>
-                <!-- VULNERABILITY #2: autocomplete enabled for all fields -->
+                <!-- VULNERABILITY: Hint - review/research the "autocomplete" attribute, which is currently ON for all fields -->
                 <input 
                     type="text" 
                     id="name" 
@@ -117,17 +65,17 @@
                 >
             </div>
 
-            <!-- VULNERABILITY #1: Unnecessary password field on contact form (phishing red flag) -->
+            <!-- VULNERABILITY: Hint - do we need a password field? Is the "type" attribute correct? -->
             <div class="form-group">
                 <label for="password">Account Password (for verification)</label>
                 <input 
-                    type="password" 
+                    type="text" 
                     id="password" 
                     name="password" 
                     placeholder="Enter your password"
                     autocomplete="on"
                 >
-                <!-- VULNERABILITY #5: Password will be displayed in JavaScript alert -->
+                <!-- VULNERABILITY: Hint - submit the form.  Does the popup data look "safe" to you? -->
                 <small style="color: var(--color-text-muted); font-size: 0.8rem;">
                     Enter your Holmes Games account password for faster response.
                 </small>
@@ -147,7 +95,7 @@
 
             <div class="form-group">
                 <label for="message">Message *</label>
-                <!-- VULNERABILITY #6: No input sanitization - content rendered directly -->
+                <!-- VULNERABILITY: Hint - do we get any feedback on sending bad data to the server? -->
                 <textarea 
                     id="message" 
                     name="message" 
@@ -156,9 +104,7 @@
                 ></textarea>
             </div>
 
-            <!-- VULNERABILITY #9: No honeypot field for bot detection -->
-            
-            <!-- VULNERABILITY #7 & #10: No rate limiting, client-side validation only -->
+            <!-- VULNERABILITY: Hint - do we have any field to detect bots and knock them back? -->
             <button type="submit" class="form-submit">Send Message</button>
             
             <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--color-text-muted); text-align: center;">
